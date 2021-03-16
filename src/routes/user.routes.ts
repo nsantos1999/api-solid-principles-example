@@ -1,8 +1,8 @@
-import { UserController } from '@controllers/UserController'
-import { Router } from 'express'
+import { Router } from "express";
+import { createUserController } from "useCases/CreateUser";
 
-const app = Router()
+const app = Router();
 
-app.get('/', UserController.get)
+app.post("/", (req, res) => createUserController.handle(req, res));
 
-export default app
+export default app;
